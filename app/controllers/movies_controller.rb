@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: %i[show update destroy]
+  before_action :set_movie, only: [:show, :update, :destroy]
 
   # GET /movies
   def index
@@ -39,21 +39,13 @@ class MoviesController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_movie
+      @movie = Movie.find(params[:id])
+    end
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_movie
-    @movie = Movie.find(params[:id])
-  end
-
-  # Only allow a trusted parameter "white list" through.
-  def movie_params
-    params.require(:movie).permit(:name, :url, :image)
-  end
+    # Only allow a trusted parameter "white list" through.
+    def movie_params
+      params.require(:movie).permit(:name, :url, :image)
+    end
 end
-
-Tip: Based on detected gems, the following RuboCop extension libraries might be helpful:
-  * rubocop-rails (http://github.com/rubocop/rubocop-rails)
-
-You can opt out of this message by adding the following to your config (see https://docs.rubocop.org/rubocop/extensions.html#extension-suggestions for more options):
-  AllCops:
-    SuggestExtensions: false
