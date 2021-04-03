@@ -14,7 +14,7 @@ class MoviesSpider < Kimurai::Base
 
       item[:name] = movie.css('span.nm-collections-title-name')&.text&.squish
       item[:url] = movie.css('a')[0]['href']
-      item[:image] = movie.css('img')[0]['src']      
+      # item[:image] = movie.css('img')[0]['src']
 
       Movie.where(item).first_or_create
     end

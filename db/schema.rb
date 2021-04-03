@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2021_03_22_234605) do
   create_table "movies", force: :cascade do |t|
     t.string "name", null: false
     t.string "url", null: false
-    t.integer "stream_service", null: false
-    t.string "image", null: false
+    t.integer "stream_service"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
