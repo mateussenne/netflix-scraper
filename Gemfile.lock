@@ -37,6 +37,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_serializers (0.10.12)
+      actionpack (>= 4.1, < 6.2)
+      activemodel (>= 4.1, < 6.2)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (6.0.3.5)
       activesupport (= 6.0.3.5)
       globalid (>= 0.3.6)
@@ -76,6 +81,8 @@ GEM
     capybara-mechanize (1.11.0)
       capybara (>= 2.4.4, < 4)
       mechanize (~> 2.7.0)
+    case_transform (0.2)
+      activesupport
     childprocess (3.0.0)
     chronic (0.10.2)
     cliver (0.3.2)
@@ -100,6 +107,7 @@ GEM
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
+    jsonapi-renderer (0.2.2)
     kimurai (1.4.0)
       activesupport
       capybara (>= 2.15, < 4.0)
@@ -293,6 +301,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  active_model_serializers (~> 0.10.2)
   bootsnap (>= 1.4.2)
   byebug
   debase (~> 0.2.1)

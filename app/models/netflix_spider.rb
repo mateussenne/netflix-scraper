@@ -3,7 +3,7 @@ class NetflixSpider < Kimurai::Base
   @engine = :selenium_chrome
   @url = 'https://www.netflix.com/br/browse/genre/34399'
   @config = {
-    before_request: { delay: 8..10 }
+    before_request: { delay: 4..7 }
   }
 
   def self.scrape
@@ -18,7 +18,7 @@ class NetflixSpider < Kimurai::Base
       item[:name] = movie.css('span.nm-collections-title-name')&.text&.squish
       item[:url] = movie.css('a')[0]['href']
       item[:image] = movie.css('img.nm-collections-title-img')[0]['src']
-      item [:stream_service] = 'netflix'      
+      item [:stream_service] = 'netflix'
       Movie.where(item).first_or_create
     end
   end

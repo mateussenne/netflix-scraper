@@ -14,7 +14,8 @@ class MoviesController < ApplicationController
   end
 
   def scrape
-    MoviesSpider.scrape
+    # NetflixSpider.scrape
+    PrimevideoSpider.scrape
   end
 
   # DELETE /movies/1
