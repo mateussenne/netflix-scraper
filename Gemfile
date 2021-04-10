@@ -21,6 +21,8 @@ gem 'puma', '~> 4.1'
 
 # Use Kimurai to scrap websites
 gem 'kimurai', '~> 1.2'
+# gem 'selenium-webdriver'
+# gem 'webdrivers'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
